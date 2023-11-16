@@ -20,6 +20,7 @@
 
 const music = new Audio('./assets/sounds/monitorBeep.mp3');
 let musicStarted = false;
+music.muted = true;
 
 function stopMusic() {
  music.currentTime = 0;
@@ -28,6 +29,7 @@ function stopMusic() {
 
 function restartMusic() {
  music.currentTime = 0;
+ music.muted = false;
  music.play().then(() => {
   // Autoplay started successfully
   music.volume = 0.7;
