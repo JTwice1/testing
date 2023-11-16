@@ -20,7 +20,6 @@
 
 const music = new Audio('./assets/sounds/monitorBeep.mp3');
 let musicStarted = false;
-music.muted = true;
 
 function stopMusic() {
  music.currentTime = 0;
@@ -31,7 +30,6 @@ function restartMusic() {
  music.currentTime = 0;
  music.play().then(() => {
   // Autoplay started successfully
-  music.muted = false;
   music.volume = 0.7;
   musicStarted = true;
  }).catch(error => {
@@ -43,11 +41,11 @@ function restartMusic() {
 function startMusicOnInteraction() {
  if (!musicStarted) {
   restartMusic();
-  window.removeEventListener('DOMContentLoaded', startMusicOnInteraction); // Remove the listener after initial interaction
+  document.removeEventListener('click', startMusicOnInteraction); // Remove the listener after initial interaction
  }
 }
 
-window.addEventListener('DOMContentLoaded', startMusicOnInteraction);
+document.addEventListener('click', startMusicOnInteraction);
 
 music.addEventListener('ended', function () {
  restartMusic();
