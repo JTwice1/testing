@@ -29,9 +29,9 @@ function stopMusic() {
 
 function restartMusic() {
  music.currentTime = 0;
- music.muted = false;
  music.play().then(() => {
   // Autoplay started successfully
+  music.muted = false;
   music.volume = 0.7;
   musicStarted = true;
  }).catch(error => {
