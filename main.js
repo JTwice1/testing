@@ -15,3 +15,5 @@ music.addEventListener('ended', function () {
 });
 
 restartMusic();
+
+console.log('test');
