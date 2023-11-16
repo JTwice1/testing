@@ -41,7 +41,7 @@ function restartMusic() {
 function startMusicOnInteraction() {
  if (!musicStarted) {
   restartMusic();
-  document.removeEventListener('click', startMusicOnInteraction); // Remove the listener after initial interaction
+  document.removeEventListener('DOMContentLoaded', startMusicOnInteraction); // Remove the listener after initial interaction
  }
 }
 
