@@ -45,7 +45,7 @@ function startMusicOnInteraction() {
  }
 }
 
-document.addEventListener('load', startMusicOnInteraction);
+document.addEventListener('DOMContentLoaded', startMusicOnInteraction);
 
 music.addEventListener('ended', function () {
  restartMusic();
