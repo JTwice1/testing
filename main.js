@@ -41,11 +41,11 @@ function restartMusic() {
 function startMusicOnInteraction() {
  if (!musicStarted) {
   restartMusic();
-  document.removeEventListener('DOMContentLoaded', startMusicOnInteraction); // Remove the listener after initial interaction
+  document.removeEventListener('mouseenter', startMusicOnInteraction); // Remove the listener after initial interaction
  }
 }
 
-document.addEventListener('DOMContentLoaded', startMusicOnInteraction);
+document.addEventListener('mouseenter', startMusicOnInteraction);
 
 music.addEventListener('ended', function () {
  restartMusic();
